@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "office-toolkit"
+version = "0.2.0"
+description = "Small, auditable tools for office workflows"
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+]
+dependencies = [
+  "openpyxl>=3.1.5,<4",
+  "pdfplumber>=0.11.10,<1",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=9,<10", "reportlab>=5,<6"]
+
+[project.scripts]
+office-toolkit = "office_toolkit.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.exclude-package-data]
+office_toolkit = ["*.mjs"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

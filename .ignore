@@ -1,0 +1,16 @@
+# Python caches and environments
+__pycache__/
+*.py[cod]
+.venv/
+
+# Packaging and test artifacts
+*.egg-info/
+.pytest_cache/
+build/
+dist/
+
+# Generated files
+tmp/
+outputs/
+*.inspect.ndjson
+
